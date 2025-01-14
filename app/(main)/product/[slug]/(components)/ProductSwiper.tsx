@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
-
-import Swiper from "swiper";
-import { Swiper as SwiperContainer, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import Image from "next/image";
+import React, { useState } from "react";
+import Swiper from "swiper";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Swiper as SwiperContainer, SwiperSlide } from "swiper/react";
+
 import { MediaAsset } from "@/types";
 
 export default function ProductSwiper({ images }: { images: MediaAsset[] }) {
@@ -19,10 +19,6 @@ export default function ProductSwiper({ images }: { images: MediaAsset[] }) {
     <div className="flex flex-col gap-y-8">
       <div>
         <SwiperContainer
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
           spaceBetween={10}
           navigation={true}
           thumbs={{ swiper: thumbsSwiper }}
@@ -47,7 +43,7 @@ export default function ProductSwiper({ images }: { images: MediaAsset[] }) {
         <SwiperContainer
           onSwiper={setThumbsSwiper}
           spaceBetween={12}
-          slidesPerView={4}        
+          slidesPerView={4}
           modules={[FreeMode, Navigation, Thumbs]}
           className="mySwiper"
         >
